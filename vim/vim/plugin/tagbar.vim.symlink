@@ -1,0 +1,3 @@
+" map <F4> to Tagbar
+inoremap <silent> <F8> :TagbarToggle<CR>
+noremap <silent> <F8> :TagbarToggle<CR>

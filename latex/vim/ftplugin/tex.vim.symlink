@@ -1,0 +1,29 @@
+" Only do this when not done yet for this buffer
+if exists("b:did_tex")
+  finish
+endif
+let b:did_tex = 1
+
+" show typos
+setlocal spell
+
+" map <F6> to save & compile latex file
+nmap <buffer> <F6> :w<CR>\ll
+imap <buffer> <F6> <Esc><F6>gi
+
+" feed latex with cpu....
+if executable("cpuf")
+  let g:cpu_frequency_increased = 0
+  function! IncreaseCPUFrequency()
+    !cpuf --high
+    let g:cpu_frequency_increased = 1
+  endfunction
+  function! DecreaseCPUFrequency()
+    if g:cpu_frequency_increased == 1
+      !cpuf -g cons
+      unlet g:cpu_frequency_increased
+    endif
+  endfunction
+  call IncreaseCPUFrequency()
+  autocmd VimLeavePre * call DecreaseCPUFrequency()
+endif

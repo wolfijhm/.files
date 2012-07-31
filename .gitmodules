@@ -22,3 +22,18 @@
 [submodule "vim/vim/bundle/Align.symlink"]
 	path = vim/vim/bundle/Align.symlink
 	url = https://github.com/vim-scripts/Align.git
+[submodule "vim/vim/bundle/tagbar.symlink"]
+	path = vim/vim/bundle/tagbar.symlink
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/vim/bundle/syntastic.symlink"]
+	path = vim/vim/bundle/syntastic.symlink
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "coffeescript/vim/bundle/coffeescript.symlink"]
+	path = coffeescript/vim/bundle/coffeescript.symlink
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "git/vim/bundle/fugitive.symlink"]
+	path = git/vim/bundle/fugitive.symlink
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "latex/vim/bundle/LaTeX-Suite.symlink"]
+	path = latex/vim/bundle/LaTeX-Suite.symlink
+	url = git://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git

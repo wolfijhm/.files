@@ -1,0 +1,7 @@
+export ZSH=$HOME/.files
+
+# source every env file
+for env_conf ($ZSH/**/env_conf) source $env_conf
+
+# source local env
+if [[ -e ~/.localenv ]] source ~/.localenv

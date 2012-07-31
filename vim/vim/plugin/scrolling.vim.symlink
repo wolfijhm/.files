@@ -1,0 +1,6 @@
+" don't ignore line wrapping if going linewise up/down
+nnoremap j gj
+nnoremap k gk
+
+" always show some next lines if scrolling up/down
+set scrolloff=3

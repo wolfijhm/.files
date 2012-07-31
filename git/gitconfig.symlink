@@ -1,0 +1,41 @@
+[alias]
+    br = branch -v
+    ci = commit
+    co = checkout
+    h = help
+    ig = ls-files --others --ignored --directory --exclude-standard
+    ls = ls-files
+    st = status
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[branch]
+    autosetuprebase = always
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = green reverse
+    local = green
+    remote = blue
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[user]
+    name = Yannik Stein
+    email = yannikstein@gmail.com

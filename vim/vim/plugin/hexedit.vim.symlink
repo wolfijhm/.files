@@ -1,0 +1,14 @@
+" use xxd to transfrom the file to hex and vice versa
+if executable("xxd")
+  function TransformToHex()
+      set binary
+      syntax off
+      %!xxd
+  endfunction
+  function TransformFromHex()
+      %!xxd -r
+      syntax on
+  endfunction
+  nnoremap <silent> <Leader>x :call TransformToHex()<Cr>
+  nnoremap <silent> <Leader>X :call TransformFromHex()<Cr>
+endif

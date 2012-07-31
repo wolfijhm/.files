@@ -1,0 +1,3 @@
+" map <F12> to make
+inoremap <F12> <Esc>:make<CR>gi
+nnoremap <F12> :make<CR>

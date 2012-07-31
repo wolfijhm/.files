@@ -1,0 +1,48 @@
+" show title in terminal
+set title
+
+" always show the status line
+set laststatus=2
+set statusline=%<%f:\ %y%q%w%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+
+" if we have no status line
+if &laststatus != 2
+  " show cursor position in the last line of the screen
+  set ruler
+  " show (partial) command in the last line of the screen
+  set showcmd
+endif
+
+" show whitespace
+set list listchars=tab:‣\ ,trail:‸
+
+" show relative line numbers
+set relativenumber
+" in normal mode
+autocmd InsertLeave * set relativenumber
+" and absolute line numbers in insert mode
+autocmd InsertEnter * set number
+
+" underline the current line
+set cursorline
+
+" Highlight matched bracket after insertion. See also 'matchtime'.
+set showmatch
+
+" colors {{{
+" use 256 Colors
+set t_Co=256
+
+" vim will try to optimize the colors depending on the background.
+" Possible Values: dark | light
+set background=dark
+
+" some changes the colorsheme
+autocmd ColorScheme * highlight TabLineSel ctermfg=White ctermbg=DarkMagenta
+autocmd ColorScheme * highlight Title ctermfg=Cyan
+autocmd ColorScheme * highlight ColorColumn ctermbg=237
+
+colorscheme desert
+" }}}
+
+" vim: foldmethod=marker

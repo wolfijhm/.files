@@ -1,0 +1,29 @@
+" ignore files with these suffixes on auto completion, lower precedence when 
+" hitting 'wildchar' twice
+set suffixes+=.log
+" completely ignore files with these suffixes
+"emacs
+set wildignore+=~*
+"latex
+set wildignore+=*.aux
+set wildignore+=*._aux
+set wildignore+=*.bbl
+set wildignore+=*.blg
+set wildignore+=*.brf
+set wildignore+=*.cb
+set wildignore+=*.idx
+set wildignore+=*.ilg
+set wildignore+=*.ind
+set wildignore+=*.inx
+set wildignore+=*.latexmain
+set wildignore+=*.nav
+set wildignore+=*.out
+set wildignore+=*.snm
+set wildignore+=*.toc
+set wildignore+=*.dvi
+set wildignore+=*.pdf
+set wildignore+=*.o
+" python
+set wildignore+=*.pyc
+" vim
+set wildignore+=*.swp

@@ -1,0 +1,10 @@
+"use cups PDF_Printer as standard printer
+set pdev=PDF_Printer
+"standard options -- other useful options are:
+" wrap:{y|n}                line wrapping enabled/disabled (enabled default)
+" duplex:{off|long|short}   duplex printing (long default)
+" porttrait:{y|n}           Portrait or Landscape (Portrait default)
+" paper:{...}               paperforamt (A4 standard)
+" syntax:{y|a|n}            syntax highlighting enabled if the printer
+"                           can print colors otherwise disabled
+set printoptions=number:y

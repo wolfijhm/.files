@@ -1,0 +1,10 @@
+# source every env file
+find -P . -name env_conf -type f | while read env_conf
+do
+  source $env_conf
+done
+
+# source local env
+[[ -e ~/.localenv ]] && source ~/.localenv
+
+# vim: ft=sh

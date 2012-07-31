@@ -1,0 +1,10 @@
+# source every alias file
+find -P . -name alias_conf -type f | while read alias_conf
+do
+  source $alias_conf
+done
+
+# source local config
+[[ -e ~/.localrc ]] && source ~/.localrc
+
+# vim: ft=sh

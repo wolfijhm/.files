@@ -1,0 +1,24 @@
+[submodule "vim/vim/bundle/Command-T.symlink"]
+	path = vim/vim/bundle/Command-T.symlink
+	url = https://github.com/wincent/Command-T.git
+[submodule "vim/vim/bundle/easymotion.symlink"]
+	path = vim/vim/bundle/easymotion.symlink
+	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/vim/bundle/nerdcommenter.symlink"]
+	path = vim/vim/bundle/nerdcommenter.symlink
+	url = https://github.com/ddollar/nerdcommenter.git
+[submodule "vim/vim/bundle/nerdtree.symlink"]
+	path = vim/vim/bundle/nerdtree.symlink
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/vim/bundle/surround.symlink"]
+	path = vim/vim/bundle/surround.symlink
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/vim/bundle/xmledit.symlink"]
+	path = vim/vim/bundle/xmledit.symlink
+	url = https://github.com/sukima/xmledit.git
+[submodule "vim/vim/bundle/AutoComplPop.symlink"]
+	path = vim/vim/bundle/AutoComplPop.symlink
+	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule "vim/vim/bundle/Align.symlink"]
+	path = vim/vim/bundle/Align.symlink
+	url = https://github.com/vim-scripts/Align.git

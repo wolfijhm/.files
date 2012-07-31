@@ -1,0 +1,22 @@
+# source every alias file
+for alias_conf ($ZSH/**/alias_conf) source $alias_conf
+
+# source every zsh config file
+for conf_file ($ZSH/**/*.zsh) source $conf_file
+
+# source local config
+if [[ -e ~/.localrc ]] source ~/.localrc
+
+# change dir if input is no executable
+setopt autocd
+# warn if regex does not match anything
+setopt nomatch
+# no beep...
+unsetopt beep notify
+
+# init autocompletion
+autoload -Uz compinit
+compinit
+
+# load completion files
+for compl_file ($ZSH/**/*.zshcompl) source $compl_file

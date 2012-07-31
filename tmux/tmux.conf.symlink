@@ -1,0 +1,35 @@
+# keybindings {{{
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+setw -g mode-keys vi
+# }}}
+
+# mouse {{{
+set-window-option -g mode-mouse on
+set-option -g mouse-select-pane on
+set-option -g mouse-resize-pane on
+set-option -g mouse-select-window on
+# }}}
+
+# miscellaneous {{{
+# show messages if a window is monitored
+set -g visual-content on
+set -g visual-silence on
+# }}}
+
+# appearance {{{
+# set colors
+set -g pane-active-border-fg blue
+setw -g window-status-current-bg blue
+setw -g window-status-current-fg white
+
+# set status line
+set -g status-interval 2
+set -g status-right-length 50
+set -g status-right "[#(hostname)]#(uptime | awk -F, '{ print $2\",\" $3\".\"$4 $5\".\"$6 $7\".\"$8 }' | sed -e 's/ average://' -e 's/  */ /g')"
+# }}}
+
+# vim: foldmethod=marker

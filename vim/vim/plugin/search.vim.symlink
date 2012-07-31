@@ -1,0 +1,19 @@
+" search while typing
+set incsearch
+
+" Ignore case in search patterns.
+set ignorecase
+" only if the search pattern does not contain any upper case letters
+set smartcase
+
+" use very magic patterns
+noremap / /\v
+vnoremap / /\v
+cnoremap s/ s/\v
+
+" highlight search pattern occurences
+set hlsearch
+
+" map <CR> to disable search highlighting
+noremap! <silent> <C-C> <C-C>:nohlsearch<CR>
+nnoremap <silent> <C-C> <C-C>:nohlsearch<CR>

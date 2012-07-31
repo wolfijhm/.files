@@ -1,0 +1,10 @@
+# cycle with <TAB> through options
+zstyle ':completion:*' menu select
+
+# complete till first ambigious character
+setopt menu_complete
+# show error if nothing matches
+setopt nomatch
+
+autoload -Uz compinit
+compinit

@@ -1,0 +1,33 @@
+" .vimrc
+" See: http://vimdoc.sourceforge.net/htmldoc/options.html for details
+
+call pathogen#infect()
+call pathogen#helptags()
+
+
+filetype plugin on
+filetype plugin indent on
+syntax on
+
+" no vi-support
+set nocompatible
+
+" size of command history
+set history=50
+
+" languages for spell checking
+set spelllang=de,en
+
+" write after this time of inactivity the swap-file to disk
+set updatetime=2000
+
+" use vim to grep files
+set grepprg=internal
+
+" more powerful backspacing
+set backspace=indent,eol,start
+
+" enable mouse
+set mouse=a
+
+let mapleader = ","

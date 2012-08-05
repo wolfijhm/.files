@@ -1,5 +1,5 @@
 # source every alias file
-find -P . -name alias_conf -type f | while read alias_conf
+find -P . -name alias.conf -type f | while read alias_conf
 do
   source $alias_conf
 done

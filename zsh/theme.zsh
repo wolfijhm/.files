@@ -3,12 +3,16 @@
 
 autoload -Uz colors && colors
 
-# show different color for root
-if [ $UID -eq 0 ]; then
-  USR="%{$fg[red]%}%n%{$reset_color%}"
-else
-  USR="%n"
-fi
+update_prompt() {
+  local usr
+  # show a different color for root
+  if [ $UID -eq 0 ]; then
+    usr="%{$fg[red]%}%n%{$reset_color%}"
+  else
+    usr="%n"
+  fi
 
-PROMPT="$USR@%{$fg[cyan]%}%M%{$reset_color%}:%~%{$fg[cyan]%}➤ %{$reset_color%}"
-unset USR
+  PROMPT="%(?..%{$fg[red]%}[%?]%{$reset_color%} )$usr@%{$fg[cyan]%}%M%{$reset_color%}:%~%{$fg[cyan]%}➤ %{$reset_color%}"
+}
+
+add-zsh-hook precmd update_prompt

@@ -6,7 +6,7 @@ function reset_rprompt() {
 add-zsh-hook precmd reset_rprompt
 
 # source every alias file
-for alias_conf ($ZSH/**/alias_conf) source $alias_conf
+for alias_conf ($ZSH/**/alias.conf) source $alias_conf
 
 # source every zsh config file
 for conf_file ($ZSH/**/*.zsh) source $conf_file

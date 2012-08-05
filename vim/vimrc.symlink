@@ -21,8 +21,8 @@ set spelllang=de,en
 " write after this time of inactivity the swap-file to disk
 set updatetime=2000
 
-" use vim to grep files
-set grepprg=internal
+" set external grep command
+set grepprg=grep\ -nsHE
 
 " more powerful backspacing
 set backspace=indent,eol,start

@@ -6,6 +6,7 @@ setopt appendhistory
 
 DIRSTACKSIZE=8
 setopt autopushd # use pushd instead of cd
+setopt pushdignoredups # ignore duplicates in the directory history
 setopt pushdminus # -1 is the last accessed direcory
 setopt pushdsilent # print no message
 setopt pushdtohome

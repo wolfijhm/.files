@@ -4,9 +4,11 @@
     co = checkout
     h = help
     ig = ls-files --others --ignored --directory --exclude-standard
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     ls = ls-files
-    st = status
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    pu = pull
+    st = status -s
+    sta = stash
 
 [branch]
     autosetuprebase = always
@@ -39,3 +41,5 @@
 [user]
     name = Yannik Stein
     email = yannikstein@gmail.com
+
+# vim: ft=gitconfig

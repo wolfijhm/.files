@@ -1,5 +1,12 @@
+# enable support of hooks
+autoload -U add-zsh-hook
+function reset_rprompt() {
+  RPROMPT=""
+}
+add-zsh-hook precmd reset_rprompt
+
 # source every alias file
-for alias_conf ($ZSH/**/alias_conf) source $alias_conf
+for alias_conf ($ZSH/**/alias.conf) source $alias_conf
 
 # source every zsh config file
 for conf_file ($ZSH/**/*.zsh) source $conf_file
@@ -15,8 +22,7 @@ setopt nomatch
 unsetopt beep notify
 
 # init autocompletion
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
 # load completion files
 for compl_file ($ZSH/**/*.zshcompl) source $compl_file

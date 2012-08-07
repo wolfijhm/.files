@@ -22,3 +22,6 @@
 [submodule "vim/vim/bundle/Align.symlink"]
 	path = vim/vim/bundle/Align.symlink
 	url = https://github.com/vim-scripts/Align.git
+[submodule "vim/vim/bundle/ZoomWin.symlink"]
+	path = vim/vim/bundle/ZoomWin.symlink
+	url = https://github.com/vim-scripts/ZoomWin.git

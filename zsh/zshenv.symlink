@@ -1,7 +1,7 @@
-export ZSH=$HOME/.files
+export DOTFILES=$HOME/.files
 
 # source every env file
-for env_conf ($ZSH/**/env_conf) source $env_conf
+for env_conf ($DOTFILES/**/env.conf) source $env_conf
 
 # source local env
 if [[ -e ~/.localenv ]] source ~/.localenv

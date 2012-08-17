@@ -37,3 +37,6 @@
 [submodule "latex/vim/bundle/LaTeX-Suite.symlink"]
 	path = latex/vim/bundle/LaTeX-Suite.symlink
 	url = git://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
+[submodule "vim/vim/bundle/ZoomWin.symlink"]
+	path = vim/vim/bundle/ZoomWin.symlink
+	url = https://github.com/vim-scripts/ZoomWin.git

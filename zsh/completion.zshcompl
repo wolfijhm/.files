@@ -5,6 +5,3 @@ zstyle ':completion:*' menu select
 setopt menu_complete
 # show error if nothing matches
 setopt nomatch
-
-autoload -Uz compinit
-compinit

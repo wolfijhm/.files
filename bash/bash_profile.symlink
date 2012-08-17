@@ -1,5 +1,13 @@
+export DOTFILES=$HOME/.files
+
+# update PATH
+find -P "$DOTFILES" -name bin -type d | while read bin_dir
+do
+  export PATH=$PATH:"$bin_dir"
+done
+
 # source every env file
-find -P . -name env_conf -type f | while read env_conf
+find -P "$DOTFILES" -name env.conf -type f | while read env_conf
 do
   source $env_conf
 done

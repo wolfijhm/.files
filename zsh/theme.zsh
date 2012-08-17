@@ -12,7 +12,7 @@ update_prompt() {
     usr="%n"
   fi
 
-  PROMPT="%(?..%{$fg[red]%}[%?]%{$reset_color%} )$usr@%{$fg[cyan]%}%M%{$reset_color%}:%~%{$fg[cyan]%}➤ %{$reset_color%}"
+  PROMPT="%(?..%{$fg[red]%}[%?]%{$reset_color%} )$usr@%{$fg[cyan]%}%m%{$reset_color%}:%~%{$fg[cyan]%}➤ %{$reset_color%}"
 }
 
 add-zsh-hook precmd update_prompt

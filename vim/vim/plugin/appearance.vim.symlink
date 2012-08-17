@@ -40,9 +40,13 @@ set background=dark
 " some changes the colorsheme
 autocmd ColorScheme * highlight TabLineSel ctermfg=White ctermbg=DarkMagenta
 autocmd ColorScheme * highlight Title ctermfg=Cyan
+
 autocmd ColorScheme * highlight ColorColumn ctermbg=237
+
+autocmd ColorScheme * highlight Pmenu ctermfg=15 ctermbg=6 guifg=White guibg=DarkCyan
+autocmd ColorScheme * highlight PmenuSel term=bold,reverse cterm=bold,reverse ctermfg=15 ctermbg=0
 
 colorscheme desert
 " }}}
 
-" vim: foldmethod=marker
+" vim: ft=vim foldmethod=marker

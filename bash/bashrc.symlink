@@ -1,5 +1,5 @@
 # source every alias file
-find -P "$DOTFILES" -name alias.conf -type f | while read alias_conf
+for alias_conf in $DOTFILES/*/alias.conf
 do
   source $alias_conf
 done

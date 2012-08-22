@@ -1,5 +1,7 @@
 export DOTFILES=$HOME/.files
 
+export BASH_PROFILE_SOURCED="true"
+
 # update PATH
 find -P "$DOTFILES" -name bin -type d | while read bin_dir
 do

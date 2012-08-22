@@ -2,6 +2,7 @@
     br = branch -v
     ci = commit
     co = checkout
+    di = diff
     h = help
     ig = ls-files --others --ignored --directory --exclude-standard
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

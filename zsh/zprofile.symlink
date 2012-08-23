@@ -1,0 +1,16 @@
+# some zsh configuration source the bash_profile,
+# if so we do not have to set the env twice
+if [[ -z $BASH_PROFILE_SOURCED ]]; then
+  export DOTFILES=$HOME/.files
+
+  # update path
+  # for bin_dir ($DOTFILES/*/bin(/)) export PATH=$PATH:"$bin_dir"
+  PATH=$PATH:foobar
+
+  # source every env file
+  for env_conf ($DOTFILES/**/env.conf) source $env_conf
+
+  # source local env
+  if [[ -e ~/.localenv ]] source ~/.localenv
+fi
+# vim: ft=zsh

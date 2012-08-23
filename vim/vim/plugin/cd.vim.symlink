@@ -1,0 +1,5 @@
+" <leader>cd changes current working directory to the directory of the current
+" file
+nnoremap <silent> <leader>cd :cd %:p:h<CR>
+
+" vim: ft=vim

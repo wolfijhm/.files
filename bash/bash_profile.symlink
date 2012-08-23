@@ -1,18 +1,23 @@
 export DOTFILES=$HOME/.files
 
+export BASH_PROFILE_SOURCED="true"
+
 # update PATH
-find -P "$DOTFILES" -name bin -type d | while read bin_dir
+for bin_dir in $DOTFILES/*/bin
 do
   export PATH=$PATH:"$bin_dir"
 done
 
 # source every env file
-find -P "$DOTFILES" -name env.conf -type f | while read env_conf
+for env_conf in $DOTFILES/*/env.conf
 do
   source $env_conf
 done
 
 # source local env
 [[ -e ~/.localenv ]] && source ~/.localenv
+
+# source bashrc
+[[ -e ~/.bashrc ]] && source ~/.bashrc
 
 # vim: ft=sh

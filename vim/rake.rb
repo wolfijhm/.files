@@ -1,3 +1,5 @@
+require 'rake/clean'
+
 desc "Build ruby c-binding for the Command-T vim plugin."
 task :build_commandt do
   buildcmd = <<-EOF

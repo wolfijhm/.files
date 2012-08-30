@@ -1,5 +1,5 @@
-# some zsh configuration source the bash_profile,
-# if so we do not have to set the env twice
+# check for double-initialization:
+# some zsh configuration source the bash_profile
 if [[ -z $BASH_PROFILE_SOURCED ]]; then
   export DOTFILES=$HOME/.files
 

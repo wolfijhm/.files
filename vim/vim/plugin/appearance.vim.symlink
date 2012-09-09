@@ -16,13 +16,6 @@ endif
 " show whitespace
 set list listchars=tab:‣\ ,trail:‸
 
-" show relative line numbers
-set relativenumber
-" in normal mode
-autocmd InsertLeave * set relativenumber
-" and absolute line numbers in insert mode
-autocmd InsertEnter * set number
-
 " underline the current line
 set cursorline
 

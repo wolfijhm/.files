@@ -31,7 +31,7 @@ setw -g window-status-current-fg white
 # set status line
 set -g status-interval 2
 set -g status-right-length 50
-set -g status-right "[#(hostname)]#(uptime | awk -F, '{ print $2\",\" $3\".\"$4 $5\".\"$6 $7\".\"$8 }' | sed -e 's/ average://' -e 's/  */ /g')"
+set -g status-right "[#(hostname)] #(uptime | sed -e 's/.*\\\\\\([0-9]\\\\+ user\\\\\\)/\\\\1/' -e 's/ average://' -e 's/,\\\\\\([0-9]\\\\\\)/.\\\\1/g' -e 's/\\\\\\([0-9]\\\\\\),/\\\\1/g' -e 's/  */ /g')"
 # }}}
 
 # vim: foldmethod=marker

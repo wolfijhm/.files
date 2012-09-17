@@ -4,7 +4,7 @@ if [[ -z $BASH_PROFILE_SOURCED ]]; then
   export DOTFILES=$HOME/.files
 
   # update path
-  for bin_dir ($DOTFILES/*/bin(/)) export PATH=$PATH:"$bin_dir"
+  for bin_dir ($DOTFILES/*/bin(/)) export PATH="$bin_dir":$PATH
 
   # source every env file
   for env_conf ($DOTFILES/**/env.conf) source $env_conf

@@ -1,0 +1,116 @@
+" arrrows {{{
+snippet ->
+	\rightarrow $1
+snippet <-
+	\leftarrow $1
+snippet =>
+	\Rightarrow $1
+snippet <=
+	\Leftarrow $1
+" }}}
+
+" font types {{{
+snippet _
+	\underline{${1}} ${2}
+
+snippet tit
+	\textit{${1}} ${2}
+snippet tbf
+	\textbf{${1}} ${2}
+snippet trm
+	\textrm{${1}} ${2}
+snippet tsc
+	\textsc{${1}} ${2}
+snippet tsf
+	\textsf{${1}} ${2}
+snippet ttt
+	\texttt{${1}} ${2}
+
+snippet mit
+	\mathit{${1}} ${2}
+snippet mbf
+	\mathbf{${1}} ${2}
+snippet mrm
+	\mathrm{${1}} ${2}
+snippet msc
+	\mathsc{${1}} ${2}
+snippet msf
+	\mathsf{${1}} ${2}
+snippet mtt
+	\mathtt{${1}} ${2}
+" }}}
+
+" greek letters {{{
+snippet a
+	\alpha
+snippet A
+	\Alpha
+snippet b
+	\beta
+snippet B
+	\Beta
+snippet g
+	\gamma
+snippet G
+	\Gamma
+snippet d
+	\delta
+snippet D
+	\Delta
+snippet e
+	\varepsilon
+snippet z
+	\zeta
+snippet et
+	\eta
+snippet t
+	\theta
+snippet T
+	\Theta
+snippet k
+	\kappa
+snippet l
+	\lambda
+snippet L
+	\Lambda
+snippet m
+	\mu
+snippet n
+	\nu
+snippet x
+	\xi
+snippet X
+	\Xi
+snippet p
+	\pi
+snippet P
+	\Pi
+snippet r
+	\rho
+snippet s
+	\sigma
+snippet S
+	\Sigma
+snippet ta
+	\tau
+snippet u
+	\upsilon
+snippet U
+	\Upsilon
+snippet ph
+	\varphi
+snippet Ph
+	\Phi
+snippet c
+	\chi
+snippet ps
+	\psi
+snippet Ps
+	\Psi
+snippet w
+	\omega
+snippet W
+	\Omega
+" }}}
+
+" vim: ft=vim foldmethod=marker

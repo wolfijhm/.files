@@ -34,9 +34,15 @@
 [submodule "git/vim/bundle/fugitive.symlink"]
 	path = git/vim/bundle/fugitive.symlink
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "latex/vim/bundle/LaTeX-Suite.symlink"]
-	path = latex/vim/bundle/LaTeX-Suite.symlink
-	url = git://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
 [submodule "vim/vim/bundle/ZoomWin.symlink"]
 	path = vim/vim/bundle/ZoomWin.symlink
 	url = https://github.com/vim-scripts/ZoomWin.git
+[submodule "vim/vim/bundle/numbers.symlink"]
+	path = vim/vim/bundle/numbers.symlink
+	url = git://github.com/myusuf3/numbers.vim.git
+[submodule "vim/vim/bundle/snipmate.symlink"]
+	path = vim/vim/bundle/snipmate.symlink
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "latex/vim/bundle/LatexBox.symlink"]
+	path = latex/vim/bundle/LatexBox.symlink
+	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git

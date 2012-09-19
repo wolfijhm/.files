@@ -4,17 +4,17 @@ if exists("b:did_tex")
 endif
 let b:did_tex = 1
 
+" mappings
+imap <silent> <buffer> __ _{}<Left>
+imap <silent> <buffer> ^^ ^{}<Left>
+
 " show typos
 setlocal spell
-
-" map <F6> to save & compile latex file
-nmap <buffer> <F6> :w<CR>\ll
-imap <buffer> <F6> <Esc><F6>gi
 
 " feed latex with cpu....
 if executable("cpuf")
   let g:cpu_frequency_increased = 0
-  function! IncreaseCPUFrequency()
+  function! s:IncreaseCPUFrequency()
     !cpuf --high
     let g:cpu_frequency_increased = 1
   endfunction
@@ -24,6 +24,83 @@ if executable("cpuf")
       unlet g:cpu_frequency_increased
     endif
   endfunction
-  call IncreaseCPUFrequency()
+  call s:IncreaseCPUFrequency()
   autocmd VimLeavePre * call DecreaseCPUFrequency()
 endif
+
+" LatexBox {{{
+
+" configuration {{{
+" Extension of the output file. One of "pdf", "dvi" or "ps".
+let g:LatexBox_output_type="pdf"
+
+" Viewer application for the output file, e.g., "xpdf".
+let g:LatexBox_viewer="evince"
+"let g:LatexBox_viewer="evince"
+
+" Automatically jump to first error after calling latexmk.
+let g:LatexBox_autojump=0
+
+" Additional options to pass to latexmk during compilation, e.g, "-d".
+let g:LatexBox_latexmk_options="-synctex=1"
+
+" enable autocompiling
+let b:Latex_autocompile=1
+
+" set time of inactivity after which autocompile is triggered in ms
+set updatetime=1000
+
+" autocompile
+function! b:toggleAutocompile()
+  if b:Latex_autocompile == 0
+    let b:Latex_autocompile = 1
+  else
+    let b:Latex_autocompile = 0
+  endif
+endfunction
+nnoremap <buffer> <silent> <localleader>lac :call b:toggleAutocompile()<Cr>
+
+function! b:saveAndCompile()
+  if (b:Latex_autocompile != 0) && &modified
+    silent write
+    silent Latexmk
+  endif
+endfunction
+autocmd CursorHold <buffer> call b:saveAndCompile()
+
+" control evince
+let b:evince_current_page = 1
+
+function! b:evince_showCurrentPage()
+  call system('evince ' . LatexBox_GetOutputFile() . ' -p ' . b:evince_current_page)
+endfunction
+nnoremap <buffer> <localleader>c :call b:evince_showCurrentPage()<Cr>
+
+
+function! b:evince_showNextPage()
+  let b:evince_current_page += 1
+  call b:evince_showCurrentPage()
+endfunction
+nmap <buffer> <localleader>n :call b:evince_showNextPage()<Cr>
+
+function! b:evince_showPreviousPage()
+  let b:evince_current_page -= 1
+  call b:evince_showCurrentPage()
+endfunction
+nnoremap <buffer> <silent> <localleader>p :call b:evince_showPreviousPage()<Cr>
+" }}}
+
+" latex box mappings {{{
+imap <buffer> ]]     <Plug>LatexCloseCurEnv
+nmap <buffer> <F5>   <Plug>LatexChangeEnv
+vmap <buffer> <F7>   <Plug>LatexWrapSelection
+vmap <buffer> <S-F7> <Plug>LatexEnvWrapSelection
+
+map  <silent> <buffer> ¶ :call LatexBox_JumpToNextBraces(0)<CR>
+map  <silent> <buffer> § :call LatexBox_JumpToNextBraces(1)<CR>
+imap <silent> <buffer> ¶ <C-R>=LatexBox_JumpToNextBraces(0)<CR>
+imap <silent> <buffer> § <C-R>=LatexBox_JumpToNextBraces(1)<CR>
+" }}}
+
+" }}}
+" vim: ft=vim foldmethod=marker

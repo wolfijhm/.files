@@ -31,3 +31,4 @@ set backspace=indent,eol,start
 set mouse=a
 
 let mapleader = ","
+let maplocalleader = ","

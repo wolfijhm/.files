@@ -1,6 +1,9 @@
 " show title in terminal
 set title
 
+" show (partial) command in the last line of the screen
+set showcmd
+
 " always show the status line
 set laststatus=2
 set statusline=%<%f:\ %y%q%w%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
@@ -9,8 +12,6 @@ set statusline=%<%f:\ %y%q%w%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 if &laststatus != 2
   " show cursor position in the last line of the screen
   set ruler
-  " show (partial) command in the last line of the screen
-  set showcmd
 endif
 
 " show whitespace

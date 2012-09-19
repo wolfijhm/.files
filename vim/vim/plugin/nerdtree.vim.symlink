@@ -1,1 +1,3 @@
-nnoremap <Leader>N :NERDTree<Cr>
+nnoremap <Leader>n :NERDTreeToggle<Cr>
+
+" vim: ft=vim

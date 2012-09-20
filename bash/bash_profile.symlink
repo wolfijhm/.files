@@ -5,7 +5,7 @@ export BASH_PROFILE_SOURCED="true"
 # update PATH
 for bin_dir in $DOTFILES/*/bin
 do
-  export PATH=$PATH:"$bin_dir"
+  export PATH="$bin_dir":$PATH
 done
 
 # source every env file

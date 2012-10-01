@@ -6,7 +6,13 @@ setopt appendhistory
 setopt hist_ignore_all_dups
 
 DIRSTACKSIZE=8
-setopt autopushd # use pushd instead of cd
-setopt pushdignoredups # ignore duplicates in the directory history
-setopt pushdsilent # print no message
+# use pushd instead of cd
+setopt autopushd
+# ignore duplicates in the directory history
+setopt pushdignoredups
+# print no message
+setopt pushdsilent
+# invert meaning of + and - (highest element in the stack hast highest order)
+setopt pushdminus
+# push directories relative to home dir
 setopt pushdtohome

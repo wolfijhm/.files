@@ -2,7 +2,11 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-setopt appendhistory
+# save each command immediately in the history file
+setopt inc_append_history
+# share history file between multiple zsh shells
+setopt share_history
+# ignore duplicates in the history
 setopt hist_ignore_all_dups
 
 DIRSTACKSIZE=8

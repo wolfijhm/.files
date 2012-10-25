@@ -1,46 +1,49 @@
 [alias]
-    br = branch -v
-    ci = commit
-    co = checkout
-    di = diff
-    h = help
-    ig = ls-files --others --ignored --directory --exclude-standard
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    ls = ls-files
-    pu = pull
-    st = status -s
-    sta = stash
+  br = branch -v
+  ci = commit
+  co = checkout
+  di = diff
+  h = help
+  ig = ls-files --others --ignored --directory --exclude-standard
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ls = ls-files
+  pu = pull
+  st = status -s
+  sta = stash
 
 [branch]
-    autosetuprebase = always
+  autosetuprebase = always
 
 [core]
-    editor = vim
-    excludesfile = ~/.gitignore
+  editor = vim
+  excludesfile = ~/.gitignore
 
 [color]
-    branch = auto
-    diff = auto
-    status = auto
+  branch = auto
+  diff = auto
+  status = auto
 
 [color "branch"]
-    current = green reverse
-    local = green
-    remote = blue
+  current = green reverse
+  local = green
+  remote = blue
 
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 
 [color "status"]
-    added = green
-    changed = yellow
-    untracked = red
+  added = green
+  changed = yellow
+  untracked = red
+
+[push]
+  default = upstream
 
 [user]
-    name = Yannik Stein
-    email = yannik.stein@gmail.com
+  name = Yannik Stein
+  email = yannik.stein@gmail.com
 
 # vim: ft=gitconfig

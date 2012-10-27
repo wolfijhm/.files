@@ -9,6 +9,6 @@ setopt nomatch
 # speak to us
 zstyle ':completion:*' verbose true
 # display the results in groups
-zstyle ':completion:*' format $'%{\e[36m%}%d%{\e[0m%}'
+zstyle ':completion:*' format $'%{\e[36m%}[%d]%{\e[0m%}'
 # show results with multiple tags in each group
 zstyle ':completion:*' group-name ''

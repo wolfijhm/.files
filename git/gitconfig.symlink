@@ -7,6 +7,7 @@
   ig = ls-files --others --ignored --directory --exclude-standard
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   ls = ls-files
+  mg = merge --no-ff
   pu = pull
   st = status -s
   sta = stash

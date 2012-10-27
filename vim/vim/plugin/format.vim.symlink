@@ -16,6 +16,8 @@ set tabstop=4
 set softtabstop=2
 " Number of spaces to use for each step of (auto)indent.
 set shiftwidth=2
+" Round indent to multiple of 'shiftwidth'.
+set shiftround
 " Use the appropriate number of spaces to insert a <Tab>.
 " Spaces are used in indents with the '>' and '<' commands
 " and when 'autoindent' is on. To insert a real tab when
@@ -49,3 +51,5 @@ nnoremap <F10> gg=Gg``
 " map <F11> to delete white-space at the end of a line
 inoremap <F11> <Esc>:%s/\s\+$//e<CR>gi
 nnoremap <silent> <F11> :%s/\s\+$//e<CR>g``
+
+" vim: ft=vim

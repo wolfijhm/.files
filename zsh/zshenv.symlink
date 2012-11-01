@@ -1,15 +1,12 @@
-# check for double-initialization:
-# some zsh configuration source the bash_profile
-if [[ -z $BASH_PROFILE_SOURCED ]]; then
-  export DOTFILES=$HOME/.files
+export DOTFILES=$HOME/.files
 
-  # update path
-  for bin_dir ($DOTFILES/*/bin(/)) export PATH="$bin_dir":$PATH
+# update path
+for bin_dir ($DOTFILES/*/bin(/)) export PATH=$PATH:"$bin_dir"
 
-  # source every env file
-  for env_conf ($DOTFILES/**/env.conf) source $env_conf
+# source every env file
+for env_conf ($DOTFILES/**/env.conf) source $env_conf
 
-  # source local env
-  if [[ -e ~/.localenv ]] source ~/.localenv
-fi
+# source local env
+if [[ -e ~/.localenv ]] source ~/.localenv
+
 # vim: ft=zsh

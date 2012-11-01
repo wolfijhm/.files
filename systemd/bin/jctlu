@@ -1,3 +1,0 @@
-#!/bin/bash
-
-journalctl _SYSTEMD_UNIT="$@"

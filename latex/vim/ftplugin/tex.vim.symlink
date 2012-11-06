@@ -15,7 +15,7 @@ setlocal spell
 if executable("cpuf")
   let g:cpu_frequency_increased = 0
   function! s:IncreaseCPUFrequency()
-    !cpuf --high
+    !cpuf -g perf
     let g:cpu_frequency_increased = 1
   endfunction
   function! DecreaseCPUFrequency()
@@ -41,8 +41,8 @@ let g:LatexBox_viewer="evince"
 " Automatically jump to first error after calling latexmk.
 let g:LatexBox_autojump=0
 
-" Additional options to pass to latexmk during compilation, e.g, "-d".
-let g:LatexBox_latexmk_options="-synctex=1"
+" Additional options to pass to latexmk during compilation, e.g, "-synctex=1".
+" let g:LatexBox_latexmk_options=""
 
 " enable autocompiling
 let b:Latex_autocompile=1

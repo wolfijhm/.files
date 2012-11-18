@@ -54,7 +54,7 @@ The rakefile performs the following steps for each file or directory in
 
 1. Strip the path to the topic directory.
 
-  Prepend the path with a '.' (We're dealing with dotfiles, right?) and remove the
+  Prepend the path with a '.' (we're dealing with dotfiles, right?) and remove the
   .symlink suffix.
 
   Use this as the relative path starting from the home directory. For example
@@ -80,7 +80,7 @@ Any content in ```~/.localrc``` and ```~/.localenv``` will be sourced last in
 This way you can overwrite any configuration in the original files.
 
 #### Patches
-During installation, rake checks if the directory ```~/.files-patches``` exists.
+During installation rake checks if the directory ```~/.files-patches``` exists.
 If so, any file with a ```.path``` suffix in ```~/.files-patches``` is executed on its counterpart.
 For example the script ```~/.files-patched/zsh/zshrc.symlink.patch``` will be
 executed with ```~/.files/zsh/zshrc.symlink``` as its first argument.

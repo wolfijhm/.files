@@ -33,7 +33,7 @@ current git branch in the prompt) [[code]](https://github.com/ystein/.files/blob
 See also [Advanced](#advanced) for further tweaks.
 
 ## Theme
-![preview](https://raw.github.com/ystein/.files/textedit-profile/preview.png)
+![preview](https://raw.github.com/ystein/.files/master/preview.png)
 
 ## Aliases
 See the ```alias.conf``` files in the topic directories.

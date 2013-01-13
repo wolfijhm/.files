@@ -16,9 +16,6 @@ The rakefile will hook the dotfiles into the system using symlinks.
 Conflicting dotfiles can either be overwritten (option ```O```) or renamed
 to &lt;dotfile&gt;.bak (option ```B```).
 
-The branch _textedit-profile_ is basically a lightweight version of the dev
-branch with fewer plugins and aliases.
-
 ## Topic Directory
 All dotfiles are grouped by their purposes into topic specific directories.
 Each of those directories can have

@@ -1,3 +1,8 @@
+" misc {{{
+snippet ...
+	\ldots
+" }}}
+
 " arrrows {{{
 snippet ->
 	\rightarrow $1
@@ -20,7 +25,7 @@ snippet tbf
 snippet trm
 	\textrm{${1}} ${2}
 snippet tsc
-	\textsc{${1}} ${2}
+	textsc{${1}} ${2}
 snippet tsf
 	\textsf{${1}} ${2}
 snippet ttt

@@ -74,20 +74,20 @@ let b:evince_current_page = 1
 function! b:evince_showCurrentPage()
   call system('evince ' . LatexBox_GetOutputFile() . ' -p ' . b:evince_current_page)
 endfunction
-nnoremap <buffer> <localleader>c :call b:evince_showCurrentPage()<Cr>
+nnoremap <buffer> <localleader>lc :call b:evince_showCurrentPage()<Cr>
 
 
 function! b:evince_showNextPage()
   let b:evince_current_page += 1
   call b:evince_showCurrentPage()
 endfunction
-nmap <buffer> <localleader>n :call b:evince_showNextPage()<Cr>
+nmap <buffer> <localleader>ln :call b:evince_showNextPage()<Cr>
 
 function! b:evince_showPreviousPage()
   let b:evince_current_page -= 1
   call b:evince_showCurrentPage()
 endfunction
-nnoremap <buffer> <silent> <localleader>p :call b:evince_showPreviousPage()<Cr>
+nnoremap <buffer> <silent> <localleader>lp :call b:evince_showPreviousPage()<Cr>
 " }}}
 
 " latex box mappings {{{

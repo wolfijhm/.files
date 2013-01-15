@@ -49,3 +49,6 @@
 [submodule "markdown/vim/bundle/markdown-folding.symlink"]
 	path = markdown/vim/bundle/markdown-folding.symlink
 	url = https://github.com/nelstrom/vim-markdown-folding.git
+[submodule "vim/vim/bundle/abolish.symlink"]
+	path = vim/vim/bundle/abolish.symlink
+	url = https://github.com/tpope/vim-abolish.git

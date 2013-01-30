@@ -1,0 +1,3 @@
+nmap <leader>g :Gstatus<CR>
+cab G Git
+cab G! Git!

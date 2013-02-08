@@ -1,0 +1,5 @@
+" set default syntax of *.tex files to latex
+let g:tex_flavor='latex'
+
+
+" vim: set ft=vim

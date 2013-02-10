@@ -36,13 +36,15 @@ set smarttab
 " ------    ---------------------------------------
 " c         Auto-wrap comments using textwidth, inserting
 "           the current comment leader automatically.
+" j         Where it makes sense, remove a comment leader
+"           when joining lines
 " q         Allow formatting of comments with "gq".
 " r         Automatically insert the current comment leader
 "           after hitting <Enter> in Insert mode.
 " t         Auto-wrap text using textwidth (does not apply
 "           to comments)
 " separated by a comma.
-set formatoptions=c,q,r,t
+set formatoptions+=c,j,q,r,t
 
 " map <F10> to format file without moving the cursor
 inoremap <F10> <Esc>gg=Ggi

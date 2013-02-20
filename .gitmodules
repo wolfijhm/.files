@@ -55,3 +55,6 @@
 [submodule "vim/vim/bundle/ultisnips.symlink"]
 	path = vim/vim/bundle/ultisnips.symlink
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "python/vim/bundle/jedi.symlink"]
+	path = python/vim/bundle/jedi.symlink
+	url = https://github.com/davidhalter/jedi-vim.git

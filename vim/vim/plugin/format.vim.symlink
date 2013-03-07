@@ -46,9 +46,13 @@ set smarttab
 " separated by a comma.
 set formatoptions+=c,j,q,r,t
 
+" map <F9> to indent all lines without moving the cursor
+inoremap <F9> <Esc>gg=Ggi
+nnoremap <F9> gg=Gg``
+
 " map <F10> to format file without moving the cursor
-inoremap <F10> <Esc>gg=Ggi
-nnoremap <F10> gg=Gg``
+inoremap <F10> <Esc>gggwGgi
+nnoremap <F10> gggwg``
 
 " map <F11> to delete white-space at the end of a line
 inoremap <F11> <Esc>:%s/\s\+$//e<CR>gi

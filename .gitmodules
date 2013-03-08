@@ -1,6 +1,3 @@
-[submodule "vim/vim/bundle/Command-T.symlink"]
-	path = vim/vim/bundle/Command-T.symlink
-	url = https://github.com/wincent/Command-T.git
 [submodule "vim/vim/bundle/easymotion.symlink"]
 	path = vim/vim/bundle/easymotion.symlink
 	url = https://github.com/Lokaltog/vim-easymotion.git
@@ -58,3 +55,6 @@
 [submodule "python/vim/bundle/jedi.symlink"]
 	path = python/vim/bundle/jedi.symlink
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim/vim/bundle/ctrlp.symlink"]
+	path = vim/vim/bundle/ctrlp.symlink
+	url = https://github.com/kien/ctrlp.vim.git

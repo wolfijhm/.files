@@ -58,3 +58,6 @@
 [submodule "vim/vim/bundle/ctrlp.symlink"]
 	path = vim/vim/bundle/ctrlp.symlink
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/vim/bundle/unimpaired.symlink"]
+	path = vim/vim/bundle/unimpaired.symlink
+	url = https://github.com/tpope/vim-unimpaired.git

@@ -5,14 +5,14 @@
 $ cd ~
 $ git clone https://github.com/ystein/.files
 $ cd .files
-$ rake
+$ make
 File already exists: /home/ystein/.zshenv, what do you want to do?
 [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all
 $ B
 ```
 
 The repository has to be cloned directly into the home directory.
-The rakefile will hook the dotfiles into the system using symlinks.
+The makefile will hook the dotfiles into the system using symlinks.
 Conflicting dotfiles can either be overwritten (option ```O```) or renamed
 to &lt;dotfile&gt;.bak (option ```B```).
 
@@ -39,12 +39,6 @@ See also [Advanced](#advanced) for further tweaks.
 See the ```alias.conf``` files in the topic directories.
 
 ## Advanced
-### Topic Specific Build Tasks
-Each topic directory can contain a file named _rake.rb_
-with topic specific build tasks during the installation (e.g. to compile a
-vim plugin). These tasks have to start with ```build_```.
-[[code]](https://github.com/ystein/.files/blob/dev-profile/Rakefile#L5-7)
-
 ### Link Algorithm
 The rakefile performs the following steps for each file or directory in
 ```~/.files``` that has a .symlink suffix:
@@ -65,20 +59,7 @@ Even vim plugins can be grouped by their purposes with this method (as
 in the example).
 
 ### Host Specific Configuration
-Sometimes, due to different versions, config files can't
-directly be shared between different hosts.
-To automate the dirty handwork you can either write local configuration files or
-patches:
-
-#### Local Configuration Files
 Any content in ```~/.localrc``` and ```~/.localenv``` will be sourced last in
 [.zshrc](https://github.com/ystein/.files/blob/dev-profile/zsh/zshrc.symlink#L27) and
 [.zshenv](https://github.com/ystein/.files/blob/dev-profile/zsh/zshenv.symlink#L10), respectively.
 This way you can overwrite any configuration in the original files.
-
-#### Patches
-During installation rake checks if the directory ```~/.files-patches``` exists.
-If so, any file with a ```.path``` suffix in ```~/.files-patches``` is executed on its counterpart.
-For example the script ```~/.files-patched/zsh/zshrc.symlink.patch``` will be
-executed with ```~/.files/zsh/zshrc.symlink``` as its first argument.
-[[code]](https://github.com/ystein/.files/blob/dev-profile/Rakefile#L22-31)

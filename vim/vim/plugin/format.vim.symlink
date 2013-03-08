@@ -44,7 +44,10 @@ set smarttab
 " t         Auto-wrap text using textwidth (does not apply
 "           to comments)
 " separated by a comma.
-set formatoptions+=c,j,q,r,t
+set formatoptions=cqrt
+if v:version >= 703
+  set formatoptions+=j
+endif
 
 " map <F9> to indent all lines without moving the cursor
 inoremap <F9> <Esc>gg=Ggi

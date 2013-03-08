@@ -1,5 +1,27 @@
 " set default syntax of *.tex files to latex
 let g:tex_flavor='latex'
 
+" ignore latex temp files
+set wildignore+=*._aux
+set wildignore+=*._log
+set wildignore+=*.aux
+set wildignore+=*.bbl
+set wildignore+=*.blg
+set wildignore+=*.brf
+set wildignore+=*.cb
+set wildignore+=*.fdb_latexmk
+set wildignore+=*.fls
+set wildignore+=*.idx
+set wildignore+=*.ilg
+set wildignore+=*.ind
+set wildignore+=*.inx
+set wildignore+=*.latexmain
+set wildignore+=*.nav
+set wildignore+=*.o
+set wildignore+=*.out
+set wildignore+=*.snm
+set wildignore+=*.tdo
+set wildignore+=*.thm
+set wildignore+=*.toc
 
-" vim: set ft=vim
+" vim: ft=vim

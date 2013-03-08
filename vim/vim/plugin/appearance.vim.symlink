@@ -6,7 +6,11 @@ set showcmd
 
 " always show the status line
 set laststatus=2
-set statusline=%<%f:\ %y%{fugitive#statusline()}%q%w%h%m%r%{SyntasticStatuslineFlag()}%=%b\ 0x%B\ \ %l,%c%V\ %P
+set statusline=%<%f:\ %y%{fugitive#statusline()}
+if v:version >= 703
+  set statusline+=%q
+endif
+set statusline+=%w%h%m%r%{SyntasticStatuslineFlag()}%=%b\ 0x%B\ \ %l,%c%V\ %P
 
 " if we have no status line
 if &laststatus != 2

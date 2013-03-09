@@ -1,6 +1,12 @@
 " .vimrc
 " See: http://vimdoc.sourceforge.net/htmldoc/options.html for details
 
+" source local vimrc if there is one
+let s:localvimrc = expand('$HOME') . '/.localvimrc'
+if filereadable(s:localvimrc)
+  execute 'source' s:localvimrc
+endif
+
 call pathogen#infect()
 call pathogen#helptags()
 

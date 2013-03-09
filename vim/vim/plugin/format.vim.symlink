@@ -1,7 +1,5 @@
 " auto break lines after this width
 set textwidth=80
-" show last column
-set colorcolumn=80
 
 " copy indent from current line when starting a new line
 set autoindent

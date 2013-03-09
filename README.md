@@ -40,26 +40,30 @@ See the ```alias.conf``` files in the topic directories.
 
 ## Advanced
 ### Link Algorithm
-The rakefile performs the following steps for each file or directory in
+The makefile performs the following steps for each file or directory in
 ```~/.files``` that has a .symlink suffix:
 
-1. Strip the path to the topic directory.
+1. Drop the path to the topic directory.
 
   Prepend the path with a '.' (we're dealing with dotfiles, right?) and remove the
   .symlink suffix.
 
   Use this as the relative path starting from the home directory. For example
-  ```~/.files/git/vim/bundle/fugitive.symlink/```  becomes the target path ```~/.vim/bundle/fugitive```.
+  ```~/.files/git/vim/bundle/fugitive.symlink/```  becomes the target path
+  ```~/.vim/bundle/fugitive```.
 
 2. Check if all parent directories exist. If not create them.
 
 3. Create the symlink.
 
-Even vim plugins can be grouped by their purposes with this method (as
+Even vim plugins can be grouped by their purposes with this method (as showed
 in the example).
 
 ### Host Specific Configuration
 Any content in ```~/.localrc``` and ```~/.localenv``` will be sourced last in
 [.zshrc](https://github.com/ystein/.files/blob/dev-profile/zsh/zshrc.symlink#L27) and
 [.zshenv](https://github.com/ystein/.files/blob/dev-profile/zsh/zshenv.symlink#L10), respectively.
+Any content in ```~/.localvimrc``` will be sourced first in
+[vimrc](https://github.com/ystein/.files/blob/dev-profile/vim/vimrc.symlink#L7)
+(for example to disable plugins otherwise loaded by pathogen).
 This way you can overwrite any configuration in the original files.

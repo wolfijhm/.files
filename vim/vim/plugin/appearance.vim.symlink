@@ -32,6 +32,13 @@ set cursorline
 " Highlight matched bracket after insertion. See also 'matchtime'.
 set showmatch
 
+" adjust quickfix window size
+" See http://vim.wikia.com/wiki/Automatically_fitting_a_quickfix_window_height
+au FileType qf call AdjustWindowHeight(1, 10)
+function! AdjustWindowHeight(minheight, maxheight)
+    exec max([min([line("$"), a:maxheight]), a:minheight]) . 'wincmd _'
+endfunction
+
 " colors {{{
 " use 256 Colors
 set t_Co=256

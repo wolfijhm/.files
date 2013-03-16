@@ -41,7 +41,7 @@ let g:LatexBox_viewer="evince"
 let b:Latex_autocompile=1
 
 " set time of inactivity after which autocompile is triggered in ms
-set updatetime=1000
+set updatetime=2000
 
 " autocompile
 function! b:toggleAutocompile()

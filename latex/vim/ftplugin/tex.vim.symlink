@@ -30,7 +30,7 @@ endif
 
 " LatexBox {{{
 
-" configuration {{{
+" compile options & viewer {{{
 " Extension of the output file. One of "pdf", "dvi" or "ps".
 let g:LatexBox_output_type="pdf"
 
@@ -81,6 +81,10 @@ function! b:evince_showPreviousPage()
   call b:evince_showCurrentPage()
 endfunction
 nnoremap <buffer> <silent> <localleader>lp :call b:evince_showPreviousPage()<Cr>
+" }}}
+
+" folding {{{
+let g:LatexBox_Folding=1
 " }}}
 
 " latex box mappings {{{

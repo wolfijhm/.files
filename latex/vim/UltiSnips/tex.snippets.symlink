@@ -1,5 +1,5 @@
 # misc {{{
-snippet \\
+snippet \\ "command" i
 \${1}{${2}}
 endsnippet
 
@@ -139,10 +139,6 @@ endsnippet
 # }}}
 # math mode {{{
 # environments {{{
-snippet $$
-$ ${VISUAL}$1 $
-endsnippet
-
 snippet arr
 \begin{array}{${1}}
 	${2}${VISUAL}
@@ -166,63 +162,63 @@ snippet (( "(...)" i
 \left( ${VISUAL}${1} \right)
 endsnippet
 
-snippet [[ "[...]"
+snippet [[ "[...]" i
     \left[ ${VISUAL}$1 \right]
 endsnippet
 
-snippet {{ "\{...\}"
+snippet {{ "\{...\}" i
 \left\\{ ${VISUAL}$1 \right\\}
 endsnippet
 
-snippet v
+snippet v "vector" w
 \vec{${1}${VISUAL}}
 endsnippet
 
-snippet _
+snippet _ "underbrace" w
 \underbrace{${1}}_{${2}}
 endsnippet
 
-snippet %
+snippet % "fraction" i
 \frac{${1}}{${2}}
 endsnippet
 
-snippet *
+snippet * "multiplication" i
 \cdot $1
 endsnippet
 
-snippet **
+snippet ** "product" i
 \prod\limits_{${1}}^{${2}} ${3}
 endsnippet
 
-snippet +
+snippet + "set union" i
 \cup $1
 endsnippet
 
-snippet ++
+snippet ++ "sum" i
 \sum\limits_{${1}}^{${2}} ${3}
 endsnippet
 
-snippet -
+snippet - "intersection" i
 \cap $1
 endsnippet
 
-snippet --
+snippet -- "setminus" i
 \setminus $1
 endsnippet
 
-snippet <
+snippet < "subset" i
 \subset
 endsnippet
 
-snippet <=
+snippet <= "subset or equal" i
 \subseteq
 endsnippet
 
-snippet A
+snippet A "forall" w
 \forall
 endsnippet
 
-snippet E
+snippet E "exists" w
 \exists
 endsnippet
 
@@ -231,164 +227,168 @@ snippet 0
 endsnippet
 # }}}
 # greek letters {{{
-snippet a
+snippet a "alpha" w
 \alpha
 endsnippet
 
-snippet b
+snippet b "beta" w
 \beta
 endsnippet
 
-snippet B
+snippet B "Beta" w
 \Beta
 endsnippet
 
-snippet g
+snippet g "gamma" w
 \gamma
 endsnippet
 
-snippet G
+snippet G "Gamma" w
 \Gamma
 endsnippet
 
-snippet d
+snippet d "delta" w
 \delta
 endsnippet
 
-snippet D
+snippet D "Delta" w
 \Delta
 endsnippet
 
-snippet e
+snippet e "epsilon" w
 \varepsilon
 endsnippet
 
-snippet z
+snippet z "zeta" w
 \zeta
 endsnippet
 
-snippet et
+snippet et "eta" w
 \eta
 endsnippet
 
-snippet t
+snippet t "theta" w
 \theta
 endsnippet
 
-snippet T
+snippet T "Theta" w
 \Theta
 endsnippet
 
-snippet k
+snippet k "kappa" w
 \kappa
 endsnippet
 
-snippet l
+snippet l "lambda" w
 \lambda
 endsnippet
 
-snippet L
+snippet L "Lambda" w
 \Lambda
 endsnippet
 
-snippet m
+snippet m "mu" w
 \mu
 endsnippet
 
-snippet n
+snippet n "nu" w
 \nu
 endsnippet
 
-snippet x
+snippet x "xi" w
 \xi
 endsnippet
 
-snippet X
+snippet X "Xi" w
 \Xi
 endsnippet
 
-snippet p
+snippet p "pi" w
 \pi
 endsnippet
 
-snippet P
+snippet P "Pi" w
 \Pi
 endsnippet
 
-snippet r
+snippet r "rho" w
 \rho
 endsnippet
 
-snippet s
+snippet s "sigma" w
 \sigma
 endsnippet
 
-snippet S
+snippet S "Sigma" w
 \Sigma
 endsnippet
 
-snippet ta
+snippet ta "tau" w
 \tau
 endsnippet
 
-snippet u
+snippet u "upsilon" w
 \upsilon
 endsnippet
 
-snippet U
+snippet U "Upsilon" w
 \Upsilon
 endsnippet
 
-snippet ph
+snippet ph "phi" w
 \varphi
 endsnippet
 
-snippet Ph
+snippet Ph "Phi" w
 \Phi
 endsnippet
 
-snippet c
+snippet c "chi" w
 \chi
 endsnippet
 
-snippet ps
+snippet ps "psi" w
 \psi
 endsnippet
 
-snippet Ps
+snippet Ps "Psi" w
 \Psi
 endsnippet
 
-snippet w
+snippet w "omega" w
 \omega
 endsnippet
 
-snippet W
+snippet W "Omega" w
 \Omega
 endsnippet
 # }}}
 # arrows {{{
-snippet ->
-\rightarrow $1
+snippet "(^|[^<])->" "rightarrow" r
+`!p
+prefix = match.group(1) if match.group(1) is not None else ''
+snip.rv = prefix + '\\rightarrow ' + t[1]`
 endsnippet
 
-snippet <-
+snippet <- "leftarrow" i
 \leftarrow $1
 endsnippet
 
-snippet <->
+snippet <-> "leftrightarrow" i
 \leftrightarrow $1
 endsnippet
 
-snippet =>
-\Rightarrow $1
+snippet "(^|[^<])=>" "Doublerightarrow" r
+`!p
+prefix = match.group(1) if match.group(1) is not None else ''
+snip.rv = prefix + '\\Rightarrow ' + t[1]`
 endsnippet
 
-snippet <=
+snippet <= "Doubleleftarrow" i
 \Leftarrow $1
 endsnippet
 
-snippet <=>
+snippet <=> "Doubleleftrightarrow" i
 \Leftrightarrow
 endsnippet
 # }}}

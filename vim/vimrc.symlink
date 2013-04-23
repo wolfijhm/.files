@@ -36,5 +36,5 @@ set backspace=indent,eol,start
 " enable mouse
 set mouse=a
 
-let mapleader = ","
-let maplocalleader = ","
+let mapleader = '-'
+let maplocalleader = '-'

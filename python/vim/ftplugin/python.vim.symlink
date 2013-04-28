@@ -1,0 +1,12 @@
+" vim: ft=vim : fdm=marker
+
+set shiftwidth=4
+set softtabstop=4
+
+" jedi settings {{{
+" do not autocomplete
+let g:jedi#popup_on_dot = 0
+
+" rename
+let g:jedi#rename_command = "<leader>r"
+" }}}

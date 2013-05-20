@@ -44,13 +44,14 @@ The makefile performs the following steps for each file or directory in
 ```~/.files``` that has a .symlink suffix:
 
 1. Drop the path to the topic directory.
+   Prepend the path with a '.' (we're dealing with dotfiles, right?) and remove the .symlink suffix.
+   Use this as the relative path starting from the home directory. For example
+  
+        ~/.files/git/vim/bundle/fugitive.symlink/
+  
+    becomes the target path
 
-  Prepend the path with a '.' (we're dealing with dotfiles, right?) and remove the
-  .symlink suffix.
-
-  Use this as the relative path starting from the home directory. For example
-  ```~/.files/git/vim/bundle/fugitive.symlink/```  becomes the target path
-  ```~/.vim/bundle/fugitive```.
+        ~/.vim/bundle/fugitive
 
 2. Check if all parent directories exist. If not create them.
 

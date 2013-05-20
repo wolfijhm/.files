@@ -1,6 +1,6 @@
 # misc {{{
-snippet \\ "command" i
-\${1}{${2}}
+snippet \ "command" i
+\\${1}{${2}}${3}
 endsnippet
 
 snippet "\.\.(\.)?" "dots" r
@@ -16,7 +16,7 @@ endsnippet
 
 snippet cen
 \begin{center}
-  $1${VISUAL}
+  ${1}${VISUAL}
 \end{center}
 endsnippet
 
@@ -88,52 +88,56 @@ snippet _
 \underline{${VISUAL}${1}}
 endsnippet
 
+snippet em
+\emph{${VISUAL}${1}}${2}
+endsnippet
+
 snippet tit
-\textit{${VISUAL}${1}}
+\textit{${VISUAL}${1}}${2}
 endsnippet
 
 snippet tbf
-\textbf{${VISUAL}${1}}
+\textbf{${VISUAL}${1}}${2}
 endsnippet
 
 snippet trm
-\textrm{${VISUAL}${1}}
+\textrm{${VISUAL}${1}}${2}
 endsnippet
 
 snippet tsc
-textsc{${VISUAL}${1}}
+textsc{${VISUAL}${1}}${2}
 endsnippet
 
 snippet tsf
-\textsf{${VISUAL}${1}}
+\textsf{${VISUAL}${1}}${2}
 endsnippet
 
 snippet ttt
-\texttt{${VISUAL}${1}}
+\texttt{${VISUAL}${1}}${2}
 endsnippet
 
 snippet mit
-\mathit{${VISUAL}${1}}
+\mathit{${VISUAL}${1}}${2}
 endsnippet
 
 snippet mbf
-\mathbf{${VISUAL}${1}}
+\mathbf{${VISUAL}${1}}${2}
 endsnippet
 
 snippet mrm
-\mathrm{${VISUAL}${1}}
+\mathrm{${VISUAL}${1}}${2}
 endsnippet
 
 snippet msc
-\mathsc{${VISUAL}${1}}
+\mathsc{${VISUAL}${1}${2}
 endsnippet
 
 snippet msf
-\mathsf{${VISUAL}${1}}
+\mathsf{${VISUAL}${1}${2}
 endsnippet
 
 snippet mtt
-\mathtt{${VISUAL}${1}}
+\mathtt{${VISUAL}${1}${2}
 endsnippet
 
 # }}}
@@ -142,48 +146,64 @@ endsnippet
 snippet arr
 \begin{array}{${1}}
 	${2}${VISUAL}
-\end{array}
+\end{array}${3}
 endsnippet
 
 snippet eq*
 \begin{equation*}
 	${1}${VISUAL}
-\end{equation*}
+\end{equation*}${2}
 endsnippet
 
 snippet eqn*
 \begin{eqnarray*}
 	${1} & ${2}
-\end{eqnarray*}
+\end{eqnarray*}${3}
 endsnippet
 # }}}
 # operators & brackets {{{
-snippet (( "(...)" i
-\left( ${VISUAL}${1} \right)
+snippet $ "$...$"
+\$${1}\$${2}
 endsnippet
 
-snippet [[ "[...]" i
-    \left[ ${VISUAL}$1 \right]
+snippet "(^|[^(])\(" "(...)" r
+(${1})${2}
 endsnippet
 
-snippet {{ "\{...\}" i
-\left\\{ ${VISUAL}$1 \right\\}
+snippet (( "\\left(...\\right)" i
+\left( ${VISUAL}${1} \right)${2}
+endsnippet
+
+snippet "(^|[^[])\[" "[...]" r
+[${1}]${2}
+endsnippet
+
+snippet [[ "\\left[...\\right]" i
+\left[ ${VISUAL}${1} \right]${2}
+endsnippet
+
+snippet "(^|[^{]){" "{...}" r
+{${1}}${2}
+endsnippet
+
+snippet {{ "\\left\\{...\\right\\}" i
+\left\\{ ${VISUAL}${1} \right\\}${2}
 endsnippet
 
 snippet v "vector" w
-\vec{${1}${VISUAL}}
+\vec{${1}${VISUAL}}${2}
 endsnippet
 
 snippet _ "underbrace" w
-\underbrace{${1}}_{${2}}
+\underbrace{${1}}_{${2}}${3}
 endsnippet
 
 snippet % "fraction" i
-\frac{${1}}{${2}}
+\frac{${1}}{${2}}${3}
 endsnippet
 
 snippet * "multiplication" i
-\cdot $1
+\cdot
 endsnippet
 
 snippet ** "product" i
@@ -191,7 +211,7 @@ snippet ** "product" i
 endsnippet
 
 snippet + "set union" i
-\cup $1
+\cup
 endsnippet
 
 snippet ++ "sum" i
@@ -199,11 +219,11 @@ snippet ++ "sum" i
 endsnippet
 
 snippet - "intersection" i
-\cap $1
+\cap
 endsnippet
 
 snippet -- "setminus" i
-\setminus $1
+\setminus
 endsnippet
 
 snippet < "subset" i
@@ -223,7 +243,7 @@ snippet E "exists" w
 endsnippet
 
 snippet 0
-\emptyset $1
+\emptyset
 endsnippet
 # }}}
 # greek letters {{{
@@ -371,11 +391,11 @@ snip.rv = prefix + '\\rightarrow ' + t[1]`
 endsnippet
 
 snippet <- "leftarrow" i
-\leftarrow $1
+\leftarrow
 endsnippet
 
 snippet <-> "leftrightarrow" i
-\leftrightarrow $1
+\leftrightarrow
 endsnippet
 
 snippet "(^|[^<])=>" "Doublerightarrow" r
@@ -385,7 +405,7 @@ snip.rv = prefix + '\\Rightarrow ' + t[1]`
 endsnippet
 
 snippet <= "Doubleleftarrow" i
-\Leftarrow $1
+\Leftarrow
 endsnippet
 
 snippet <=> "Doubleleftrightarrow" i
@@ -396,10 +416,10 @@ endsnippet
 # beamer {{{
 snippet fr
 \begin{frame}
-	\frametitle{$1}
-	${VISUAL}$2
-\end{frame}
+	\frametitle{${1}}
+	${VISUAL}${2}
+\end{frame}${3}
 endsnippet
 # }}}
 
-# vim: foldmethod=marker
+# vim:foldmethod=marker:

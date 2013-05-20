@@ -40,9 +40,6 @@
   changed = yellow
   untracked = red
 
-[push]
-  default = upstream
-
 [user]
   name = Yannik Stein
   email = yannik.stein@gmail.com

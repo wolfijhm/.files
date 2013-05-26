@@ -1,3 +1,6 @@
+
+.PHONY: all git symlink update clean
+
 all: git symlink
 
 git:

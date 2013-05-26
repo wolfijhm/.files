@@ -166,7 +166,7 @@ snippet $ "$...$"
 \$${1}\$${2}
 endsnippet
 
-snippet "(^|[^(])\(" "(...)" r
+snippet "(^|(?<=[^(]))\(" "(...)" r
 (${1})${2}
 endsnippet
 
@@ -174,7 +174,7 @@ snippet (( "\\left(...\\right)" i
 \left( ${VISUAL}${1} \right)${2}
 endsnippet
 
-snippet "(^|[^[])\[" "[...]" r
+snippet "(^|(?<=[^[]))\[" "[...]" r
 [${1}]${2}
 endsnippet
 
@@ -182,8 +182,8 @@ snippet [[ "\\left[...\\right]" i
 \left[ ${VISUAL}${1} \right]${2}
 endsnippet
 
-snippet "(^|[^{]){" "{...}" r
-{${1}}${2}
+snippet "(^|(?<=[^{])){" "{...}" r
+\\{${1}\\}${2}
 endsnippet
 
 snippet {{ "\\left\\{...\\right\\}" i
@@ -210,16 +210,24 @@ snippet ** "product" i
 \prod\limits_{${1}}^{${2}} ${3}
 endsnippet
 
-snippet + "set union" i
+snippet "(^|(?<=[^b\+]))\+" "set union" r
 \cup
+endsnippet
+
+snippet b+ "big set union" w
+\bigcup
 endsnippet
 
 snippet ++ "sum" i
 \sum\limits_{${1}}^{${2}} ${3}
 endsnippet
 
-snippet - "intersection" i
+snippet "(^|(?<=[^b-]))-" "intersection" r
 \cap
+endsnippet
+
+snippet b- "big intersection" w
+\bigcap
 endsnippet
 
 snippet -- "setminus" i
@@ -384,7 +392,7 @@ snippet W "Omega" w
 endsnippet
 # }}}
 # arrows {{{
-snippet "(^|[^<])->" "rightarrow" r
+snippet "(^|(?<=[^<]))->" "rightarrow" r
 `!p
 prefix = match.group(1) if match.group(1) is not None else ''
 snip.rv = prefix + '\\rightarrow ' + t[1]`
@@ -398,7 +406,7 @@ snippet <-> "leftrightarrow" i
 \leftrightarrow
 endsnippet
 
-snippet "(^|[^<])=>" "Doublerightarrow" r
+snippet "(^|(?<=[^<]))=>" "Doublerightarrow" r
 `!p
 prefix = match.group(1) if match.group(1) is not None else ''
 snip.rv = prefix + '\\Rightarrow ' + t[1]`

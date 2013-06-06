@@ -11,7 +11,7 @@ endsnippet
 snippet beg
 \begin{${1:env}}
 	${VISUAL}${2}
-\end{$1}
+\end\{$1\}
 endsnippet
 
 snippet cen
@@ -129,15 +129,15 @@ snippet mrm
 endsnippet
 
 snippet msc
-\mathsc{${VISUAL}${1}${2}
+\mathsc{${VISUAL}${1}}${2}
 endsnippet
 
 snippet msf
-\mathsf{${VISUAL}${1}${2}
+\mathsf{${VISUAL}${1}}${2}
 endsnippet
 
 snippet mtt
-\mathtt{${VISUAL}${1}${2}
+\mathtt{${VISUAL}${1}}${2}
 endsnippet
 
 # }}}
@@ -222,7 +222,7 @@ snippet ++ "sum" i
 \sum\limits_{${1}}^{${2}} ${3}
 endsnippet
 
-snippet "(^|(?<=[^b-]))-" "intersection" r
+snippet "(^|(?<=[^<b-]))-" "intersection" r
 \cap
 endsnippet
 

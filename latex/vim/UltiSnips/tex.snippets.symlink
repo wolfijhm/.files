@@ -84,60 +84,64 @@ ${3}
 endsnippet
 # }}}
 # font types {{{
-snippet _
+snippet _ "underline" w
 \underline{${VISUAL}${1}}
 endsnippet
 
-snippet em
-\emph{${VISUAL}${1}}${2}
+snippet em "emphasis" w
+\emph{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet tit
-\textit{${VISUAL}${1}}${2}
+snippet tit "italic" w
+\textit{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet tbf
-\textbf{${VISUAL}${1}}${2}
+snippet tbf "bold" w
+\textbf{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet trm
-\textrm{${VISUAL}${1}}${2}
+snippet trm "roman" w
+\textrm{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet tsc
-textsc{${VISUAL}${1}}${2}
+snippet tsc "small capitals" w
+\textsc{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet tsf
-\textsf{${VISUAL}${1}}${2}
+snippet tsf "sans serif" w
+\textsf{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet ttt
-\texttt{${VISUAL}${1}}${2}
+snippet ttt "teletype" w
+\texttt{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet mit
-\mathit{${VISUAL}${1}}${2}
+snippet mbf "math bold" w
+\mathbf{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet mbf
-\mathbf{${VISUAL}${1}}${2}
+snippet mca "math calligraphy" w
+\mathcal{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet mrm
-\mathrm{${VISUAL}${1}}${2}
+snippet mit "math italic" w
+\mathit{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet msc
-\mathsc{${VISUAL}${1}}${2}
+snippet mrm "math roman" w
+\mathrm{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet msf
-\mathsf{${VISUAL}${1}}${2}
+snippet msc "math small capitals" w
+\mathsc{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet mtt
-\mathtt{${VISUAL}${1}}${2}
+snippet msf "math sans serif" w
+\mathsf{${VISUAL}${1}} ${2}
+endsnippet
+
+snippet mtt "math teletype" w
+\mathtt{${VISUAL}${1}} ${2}
 endsnippet
 
 # }}}
@@ -163,7 +167,7 @@ endsnippet
 # }}}
 # operators & brackets {{{
 snippet $ "$...$"
-\$${1}\$${2}
+\$${1}\$ ${2}
 endsnippet
 
 snippet "(^|(?<=[^(]))\(" "(...)" r
@@ -195,7 +199,7 @@ snippet v "vector" w
 endsnippet
 
 snippet _ "underbrace" w
-\underbrace{${1}}_{${2}}${3}
+\underbrace{${1}${VISUAL}}_{${2}}${3}
 endsnippet
 
 snippet % "fraction" i
@@ -250,7 +254,7 @@ snippet E "exists" w
 \exists
 endsnippet
 
-snippet 0
+snippet 0 "empty set" i
 \emptyset
 endsnippet
 # }}}

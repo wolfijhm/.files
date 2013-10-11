@@ -8,11 +8,11 @@ git:
 	git submodule update
 
 symlink:
-	@./dotfiles `pwd` hookdotfiles
+	@./scripts/bin/dotfiles `pwd` hookdotfiles
 
 update: git
 	git submodule foreach 'git checkout master && git pull'
 	git commit --all --edit --message 'update git submodules'
 
 clean:
-	@./dotfiles `pwd` unlink
+	@./scripts/bin/dotfiles `pwd` unlink

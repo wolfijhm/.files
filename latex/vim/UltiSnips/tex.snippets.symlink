@@ -1,6 +1,6 @@
 # misc {{{
 snippet \ "command" i
-\\${1}{${2}}${3}
+\\${1}{${VISUAL}${2}}${3}
 endsnippet
 
 snippet "\.\.(\.)?" "dots" r
@@ -132,10 +132,6 @@ snippet mrm "math roman" w
 \mathrm{${VISUAL}${1}} ${2}
 endsnippet
 
-snippet msc "math small capitals" w
-\mathsc{${VISUAL}${1}} ${2}
-endsnippet
-
 snippet msf "math sans serif" w
 \mathsf{${VISUAL}${1}} ${2}
 endsnippet
@@ -256,6 +252,10 @@ endsnippet
 
 snippet 0 "empty set" i
 \emptyset
+endsnippet
+
+snippet i "element in" i
+\in
 endsnippet
 # }}}
 # greek letters {{{

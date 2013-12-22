@@ -210,7 +210,7 @@ snippet ** "product" i
 \prod\limits_{${1}}^{${2}} ${3}
 endsnippet
 
-snippet "(^|(?<=[^b\+]))\+" "set union" r
+snippet "(^|(?<=[^sb\+]))\+" "set union" r
 \cup
 endsnippet
 
@@ -218,7 +218,11 @@ snippet b+ "big set union" w
 \bigcup
 endsnippet
 
-snippet ++ "sum" i
+snippet s+ "sum" i
+\sum_{${1}}^{${2}} ${3}
+endsnippet
+
+snippet ++ "sum with limits" i
 \sum\limits_{${1}}^{${2}} ${3}
 endsnippet
 

@@ -11,23 +11,6 @@ imap <silent> <buffer> ^^ ^{}<Left>
 " show typos
 setlocal spell
 
-" feed latex with cpu....
-if executable("cpuf")
-  let g:cpu_frequency_increased = 0
-  function! s:IncreaseCPUFrequency()
-    !cpuf -g perf
-    let g:cpu_frequency_increased = 1
-  endfunction
-  function! DecreaseCPUFrequency()
-    if g:cpu_frequency_increased == 1
-      !cpuf -g cons
-      unlet g:cpu_frequency_increased
-    endif
-  endfunction
-  call s:IncreaseCPUFrequency()
-  autocmd VimLeavePre * call DecreaseCPUFrequency()
-endif
-
 " LatexBox {{{
 
 " compile options & viewer {{{
@@ -35,10 +18,13 @@ endif
 let g:LatexBox_output_type="pdf"
 
 " Viewer application for the output file, e.g., "xpdf".
-let g:LatexBox_viewer="evince"
+let g:LatexBox_viewer="okular"
 
 " enable autocompiling
 let b:Latex_autocompile=1
+
+" enable background compiling
+let g:LatexBox_latexmk_async=1
 
 " set time of inactivity after which autocompile is triggered in ms
 set updatetime=2000
@@ -47,8 +33,10 @@ set updatetime=2000
 function! b:toggleAutocompile()
   if b:Latex_autocompile == 0
     let b:Latex_autocompile = 1
+    echo "latex autocompile on"
   else
     let b:Latex_autocompile = 0
+    echo "latex autocompile off"
   endif
 endfunction
 nnoremap <buffer> <silent> <localleader>lac :call b:toggleAutocompile()<Cr>

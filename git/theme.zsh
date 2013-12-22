@@ -1,18 +1,14 @@
 # based on
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/git.zsh
 
-goto_gitroot() {
-  [[ -d '.git' || $(pwd) == '/' ]] && return
-  cd ..
-  goto_gitroot
-}
-
 git_updateprompt() {
   local ref prefix suffix color clean_color dirty_color
   ref=$(git symbolic-ref HEAD 2> /dev/null)
+  if [[ -z $ref ]]; then
+    # check if we are in a git repository
+    return
+  fi
   ref=${ref#refs/heads/}
-
-  [[ -z $ref ]] && return
 
   prefix="<git:"
   suffix=">"
@@ -20,9 +16,10 @@ git_updateprompt() {
   dirty_color="yellow"
   clean_color="cyan"
 
-  if [[ -n $(goto_gitroot; git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+  GIT_STATUS=$(git status -s)
+  if [[ -n $(echo $GIT_STATUS | grep '??' 2> /dev/null) ]]; then
     color="$untracked_color"
-  elif [[ -n $(goto_gitroot; git status -s 2> /dev/null) ]]; then
+  elif [[ -n $GIT_STATUS ]]; then
     color="$dirty_color"
   else
     color="$clean_color"

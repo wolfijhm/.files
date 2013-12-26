@@ -26,6 +26,9 @@ let b:Latex_autocompile=1
 " enable background compiling
 let g:LatexBox_latexmk_async=1
 
+" open the quickfix window if there are errors or warnings, but do not focus
+let g:LatexBox_quickfix=2
+
 " set time of inactivity after which autocompile is triggered in ms
 set updatetime=2000
 

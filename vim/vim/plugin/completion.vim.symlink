@@ -1,3 +1,8 @@
+" completion modes
+set wildmode=longest:full,full
+" show menu if there are multiple matches
+set wildmenu
+
 " ignore files with these suffixes on auto completion,
 " lower precedence when hitting 'wildchar' twice
 set suffixes+=.log

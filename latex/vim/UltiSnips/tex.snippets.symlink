@@ -149,16 +149,16 @@ snippet arr
 \end{array}${3}
 endsnippet
 
-snippet eq*
-\begin{equation*}
+snippet al
+\begin{align}
 	${1}${VISUAL}
-\end{equation*}${2}
+\end{align}${2}
 endsnippet
 
-snippet eqn*
-\begin{eqnarray*}
-	${1} & ${2}
-\end{eqnarray*}${3}
+snippet al*
+\begin{align*}
+	${1}${VISUAL}
+\end{align*}${2}
 endsnippet
 # }}}
 # operators & brackets {{{
@@ -202,7 +202,7 @@ snippet % "fraction" i
 \frac{${1}}{${2}}${3}
 endsnippet
 
-snippet * "multiplication" i
+snippet "(^|(?<=[^l]))\*" "multiplication" r
 \cdot
 endsnippet
 

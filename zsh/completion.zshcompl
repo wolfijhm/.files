@@ -1,14 +1,28 @@
 # set order of completion operations
 zstyle ':completion:*' completer _expand _complete _correct _approximate
+
 # cycle with <TAB> through options
 zstyle ':completion:*' menu select
+
 # complete till first ambigious character
 setopt menu_complete
+
+# When the current word has a glob pattern, do not insert all the
+# words resulting from the expansion but cycle through them like
+# MENU_COMPLETE. If no matches are found, a * is added to the end of the
+# word, or inserted at the cursor if COMPLETE_IN_WORD is set, and
+# completion is attempted again. Using patterns works not only for files
+# but for all completions, such as options, user names, etc.
+setopt glob_complete
+
 # show error if nothing matches
 setopt nomatch
+
 # speak to us
 zstyle ':completion:*' verbose true
+
 # display the results in groups
 zstyle ':completion:*' format $'%{\e[36m%}[%d]%{\e[0m%}'
+
 # show results with multiple tags in each group
 zstyle ':completion:*' group-name ''

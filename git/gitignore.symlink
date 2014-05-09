@@ -64,4 +64,8 @@ __pycache__
 *.class
 # }}}
 
+# other VCSs {{{
+.svn
+# }}}
+
 # vim: foldmethod=marker

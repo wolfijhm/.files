@@ -14,13 +14,19 @@ set-option -g mouse-resize-pane on
 set-option -g mouse-select-window on
 # }}}
 
-# miscellaneous {{{
+# clipboard {{{
+# paste selection
+bind -n M-C-p run-shell "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
+# paste clipboard
+bind -n M-C-v run-shell "tmux set-buffer \"$(xclip -sel clip -o)\"; tmux paste-buffer"
+# copy tmux buffer to X11 selection register
+bind -n M-C-y run-shell "tmux show-buffer | xclip -i"
+
+# appearance {{{
 # show messages if a window is monitored
 set -g visual-content on
 set -g visual-silence on
-# }}}
 
-# appearance {{{
 set -g default-terminal "screen-256color"
 
 # set colors

@@ -26,10 +26,6 @@ snippet ite
 \end{itemize}
 endsnippet
 
-snippet it
-\item
-endsnippet
-
 snippet fig
 \begin{figure}[htbp]
 	\begin{center}

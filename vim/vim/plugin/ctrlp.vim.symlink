@@ -2,3 +2,6 @@
 
 " enable persistent caching
 let g:ctrlp_clear_cache_on_exit = 0
+
+" open multiple selected files in new tabs
+let g:ctrlp_open_multiple_files = 't'

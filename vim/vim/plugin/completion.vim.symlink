@@ -1,5 +1,5 @@
 " completion modes
-set wildmode=longest:full,full
+set wildmode=full
 " show menu if there are multiple matches
 set wildmenu
 

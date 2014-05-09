@@ -20,8 +20,10 @@ let g:LatexBox_output_type="pdf"
 " Viewer application for the output file, e.g., "xpdf".
 let g:LatexBox_viewer="okular"
 
-" enable autocompiling
-let b:Latex_autocompile=1
+" initially disable autocompiling
+if exists('g:Latex_autocompile') == 0
+  let g:Latex_autocompile=0
+endif
 
 " enable background compiling
 let g:LatexBox_latexmk_async=1
@@ -33,52 +35,36 @@ let g:LatexBox_quickfix=2
 set updatetime=2000
 
 " autocompile
-function! b:toggleAutocompile()
-  if b:Latex_autocompile == 0
-    let b:Latex_autocompile = 1
-    echo "latex autocompile on"
+function! ToggleAutocompile()
+  if g:Latex_autocompile == 0
+    let g:Latex_autocompile = 1
+    echo 'latex autocompile on'
   else
-    let b:Latex_autocompile = 0
-    echo "latex autocompile off"
+    let g:Latex_autocompile = 0
+    echo 'latex autocompile off'
   endif
 endfunction
-nnoremap <buffer> <silent> <localleader>lac :call b:toggleAutocompile()<Cr>
+nnoremap <buffer> <silent> <localleader>la :call ToggleAutocompile()<Cr>
 
 function! b:saveAndCompile()
-  if (b:Latex_autocompile != 0) && &modified
+  if (g:Latex_autocompile != 0) && &modified
+    echo 'save and compile'
     silent write
     silent Latexmk
   endif
 endfunction
 autocmd CursorHold <buffer> call b:saveAndCompile()
 
-" control evince
-let b:evince_current_page = 1
-
-function! b:evince_showCurrentPage()
-  call system('evince ' . LatexBox_GetOutputFile() . ' -p ' . b:evince_current_page)
-endfunction
-nnoremap <buffer> <localleader>lc :call b:evince_showCurrentPage()<Cr>
-
-
-function! b:evince_showNextPage()
-  let b:evince_current_page += 1
-  call b:evince_showCurrentPage()
-endfunction
-nmap <buffer> <localleader>ln :call b:evince_showNextPage()<Cr>
-
-function! b:evince_showPreviousPage()
-  let b:evince_current_page -= 1
-  call b:evince_showCurrentPage()
-endfunction
-nnoremap <buffer> <silent> <localleader>lp :call b:evince_showPreviousPage()<Cr>
-" }}}
-
 " folding {{{
 let g:LatexBox_Folding=1
 " }}}
 
 " latex box mappings {{{
+
+" save before compile
+nnoremap <buffer> <silent> <localleader>ll :w \| :Latexmk <CR>
+nnoremap <buffer> <silent> <localleader>lL :w \| :Latexmk! <CR>
+
 imap <buffer> ]]     <Plug>LatexCloseCurEnv
 nmap <buffer> <F5>   <Plug>LatexChangeEnv
 vmap <buffer> <F7>   <Plug>LatexWrapSelection

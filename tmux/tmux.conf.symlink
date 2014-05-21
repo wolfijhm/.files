@@ -15,12 +15,12 @@ set-option -g mouse-select-window on
 # }}}
 
 # clipboard {{{
-# paste selection
-bind -n M-C-p run-shell "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
-# paste clipboard
-bind -n M-C-v run-shell "tmux set-buffer \"$(xclip -sel clip -o)\"; tmux paste-buffer"
-# copy tmux buffer to X11 selection register
-bind -n M-C-y run-shell "tmux show-buffer | xclip -i"
+# paste selection with CTRL-ALT-p
+bind -n C-M-p run-shell "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
+# paste clipboard with CTRL-ALT-v
+bind -n C-M-v run-shell "tmux set-buffer \"$(xclip -sel clip -o)\"; tmux paste-buffer"
+# copy tmux buffer to X11 selection register with CTRL-ALT-y
+bind -n C-M-y run-shell "tmux show-buffer | xclip -i"
 
 # appearance {{{
 # show messages if a window is monitored

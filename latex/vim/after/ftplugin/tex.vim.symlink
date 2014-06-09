@@ -46,14 +46,14 @@ function! ToggleAutocompile()
 endfunction
 nnoremap <buffer> <silent> <localleader>la :call ToggleAutocompile()<Cr>
 
-function! b:saveAndCompile()
+function! TexSaveAndCompile()
   if (g:Latex_autocompile != 0) && &modified
     echo 'save and compile'
     silent write
     silent Latexmk
   endif
 endfunction
-autocmd CursorHold <buffer> call b:saveAndCompile()
+autocmd CursorHold <buffer> call TexSaveAndCompile()
 
 " folding {{{
 let g:LatexBox_Folding=1

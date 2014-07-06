@@ -85,7 +85,11 @@ snippet _ "underline" w
 endsnippet
 
 snippet em "emphasis" w
-\emph{${VISUAL}${1}} ${2}
+\emph{${VISUAL}${1}}${2}
+endsnippet
+
+snippet te "text"
+\text{${VISUAL}$1}
 endsnippet
 
 snippet tit "italic" w
@@ -145,13 +149,20 @@ snippet arr
 \end{array}${3}
 endsnippet
 
+snippet cas "case distinction"
+\begin{cases}
+  $1 & $2 \\
+  $3 & $4
+\end{cases}
+endsnippet
+
 snippet al
 \begin{align}
 	${1}${VISUAL}
 \end{align}${2}
 endsnippet
 
-snippet al*
+snippet all
 \begin{align*}
 	${1}${VISUAL}
 \end{align*}${2}
@@ -198,11 +209,43 @@ snippet % "fraction" i
 \frac{${1}}{${2}}${3}
 endsnippet
 
+snippet lc "left ceil"
+\lceil $1
+endsnippet
+
+snippet rc "right ceil"
+\rceil$1
+endsnippet
+
+snippet ce "ceil"
+\lceil ${VISUAL}$1 \rceil$2
+endsnippet
+
+snippet lf "left floor"
+\lfloor $1
+endsnippet
+
+snippet rf "right floor"
+\rfloor$1
+endsnippet
+
+snippet fl "floor"
+\lfloor ${VISUAL}$1 \rfloor$2
+endsnippet
+
 snippet "(^|(?<=[^l]))\*" "multiplication" r
 \cdot
 endsnippet
 
-snippet ** "product" i
+snippet sq "square root"
+\sqrt{${VISUAL}${1}}$2
+endsnippet
+
+snippet pr "product" i
+\prod\limits_{${1}}^{${2}} ${3}
+endsnippet
+
+snippet pl "product with limits" i
 \prod\limits_{${1}}^{${2}} ${3}
 endsnippet
 
@@ -214,11 +257,11 @@ snippet b+ "big set union" w
 \bigcup
 endsnippet
 
-snippet s+ "sum" i
+snippet su "sum" i
 \sum_{${1}}^{${2}} ${3}
 endsnippet
 
-snippet ++ "sum with limits" i
+snippet sl "sum with limits" i
 \sum\limits_{${1}}^{${2}} ${3}
 endsnippet
 
@@ -230,7 +273,7 @@ snippet b- "big intersection" w
 \bigcap
 endsnippet
 
-snippet -- "setminus" i
+snippet sm "setminus" i
 \setminus
 endsnippet
 

@@ -41,7 +41,10 @@
   untracked = red
 
 [user]
-  name = Yannik Stein
-  email = yannik.stein@gmail.com
+  name = Wolfgang Mulzer
+  email = mulzer@inf.fu-berlin
+[core]
+  editor = vim
+[merge]
+  tool = gvimdiff
 
-# vim: ft=gitconfig

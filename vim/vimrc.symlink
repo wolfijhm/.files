@@ -7,6 +7,10 @@ if filereadable(s:localvimrc)
   execute 'source' s:localvimrc
 endif
 
+set novb
+set number
+set nuw=4
+
 call pathogen#infect()
 call pathogen#helptags()
 

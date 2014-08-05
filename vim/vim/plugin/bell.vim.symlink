@@ -2,7 +2,7 @@
 set noeb
 
 " enable visual error bell
-set vb
+set novb
 
 " set terminal signal for visual bell to 'null'
 set t_vb=

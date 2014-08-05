@@ -9,7 +9,7 @@ endif
 
 set novb
 set number
-set nuw=4
+set nuw=5
 
 call pathogen#infect()
 call pathogen#helptags()

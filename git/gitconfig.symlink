@@ -49,4 +49,4 @@
   tool = gvimdiff
 
 [push]
-	default = simple
+	default = matching

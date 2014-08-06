@@ -1,4 +1,0 @@
-" read interpreter output
-if executable("ruby")
-  command -nargs=1  Rb r !ruby -e 'puts <args>'
-endif

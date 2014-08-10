@@ -1,6 +1,8 @@
 
 .PHONY: all git symlink update clean
 
+SETUP=./setup
+
 all: git symlink
 
 git:
@@ -8,11 +10,11 @@ git:
 	git submodule update
 
 symlink:
-	@./scripts/bin/dotfiles `pwd` hookdotfiles
+	@$(SETUP) `pwd` hookdotfiles
 
 update: git
 	git submodule foreach 'git checkout master && git pull'
 	git commit --all --edit --message 'update git submodules'
 
 clean:
-	@./scripts/bin/dotfiles `pwd` unlink
+	@$(SETUP) `pwd` unlink

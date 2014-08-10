@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case "$1" in
+  -h|--help) echo 'usage: watchfile <command> <file> <interval>' ;;
+  *)  COMMAND=$1
+      FILE=$2
+      INTERVAL=$3
+
+      while 1; do
+        OLDMD5=$(md5sum $2)
+        bash -c "$1"
+        while [ "OLDMD5" != "$(md5sum $FILE)" ]; do
+          sleep $INTERVAL;
+        done
+    done ;;
+esac

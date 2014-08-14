@@ -174,7 +174,7 @@ snippet $ "$...$"
 endsnippet
 
 snippet "(^|(?<=[^(]))\(" "(...)" r
-(${1})${2}
+(${VISUAL}${1})${2}
 endsnippet
 
 snippet (( "\\left(...\\right)" i
@@ -182,7 +182,7 @@ snippet (( "\\left(...\\right)" i
 endsnippet
 
 snippet "(^|(?<=[^[]))\[" "[...]" r
-[${1}]${2}
+[${VISUAL}${1}]${2}
 endsnippet
 
 snippet [[ "\\left[...\\right]" i
@@ -190,7 +190,7 @@ snippet [[ "\\left[...\\right]" i
 endsnippet
 
 snippet "(^|(?<=[^{])){" "{...}" r
-\\{${1}\\}${2}
+\\{${VISUAL}${1}\\}${2}
 endsnippet
 
 snippet {{ "\\left\\{...\\right\\}" i

@@ -62,8 +62,8 @@ let g:LatexBox_Folding=1
 " latex box mappings {{{
 
 " save before compile
-nnoremap <buffer> <silent> <localleader>ll :w \| :Latexmk <CR>
-nnoremap <buffer> <silent> <localleader>lL :w \| :Latexmk! <CR>
+nnoremap <buffer> <silent> <localleader>ll :silent :w \| :Latexmk <CR>
+nnoremap <buffer> <silent> <localleader>lL :silent :w \| :Latexmk! <CR>
 
 imap <buffer> ]]     <Plug>LatexCloseCurEnv
 nmap <buffer> <F5>   <Plug>LatexChangeEnv
